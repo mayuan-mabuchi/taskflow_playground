@@ -4,6 +4,7 @@ option(CPP_STARTER_USE_GTKMM "Enable compilation of GTKMM sample" OFF)
 option(CPP_STARTER_USE_IMGUI "Enable compilation of ImGui sample" OFF)
 option(CPP_STARTER_USE_NANA "Enable compilation of Nana GUI sample" OFF)
 option(CPP_STARTER_USE_SDL "Enable compilation of SDL sample" OFF)
+option(CPP_STARTER_USE_TASKFLOW "Enable compilation of TaskFlow sample" ON)
 
 # sdl
 if(CPP_STARTER_USE_SDL)
@@ -39,6 +40,12 @@ endif()
 if(CPP_STARTER_USE_NANA)
   message("Using Nana")
   add_subdirectory(nana)
+endif()
+
+#Taskflow
+if(CPP_STARTER_USE_TASKFLOW)
+  message("Using Taskflow")
+  add_subdirectory(taskflow)
 endif()
 
 # Generic test that uses conan libs
